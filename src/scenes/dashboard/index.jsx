@@ -26,7 +26,7 @@ const Dashboard = () => {
         <Box>
           <Button
             sx={{
-              backgroundColor: colors.blueAccent[700],
+              backgroundColor: "rgba(255, 159, 67, 0.85)",
               color: colors.grey[100],
               fontSize: "14px",
               fontWeight: "bold",
@@ -47,7 +47,7 @@ const Dashboard = () => {
         gap="20px"
       >
         {/* ROW 1 */}
-        <Box
+        {/* <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
@@ -122,7 +122,7 @@ const Dashboard = () => {
               />
             }
           />
-        </Box>
+        </Box> */}
 
         {/* ROW 2 */}
         <Box
@@ -143,14 +143,14 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Revenue Generated
+                Projects Progress
               </Typography>
               <Typography
                 variant="h3"
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                $59,342.32
+                75%
               </Typography>
             </Box>
             <Box>
@@ -180,7 +180,7 @@ const Dashboard = () => {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
+              Upcomming projects
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (
@@ -207,10 +207,11 @@ const Dashboard = () => {
               <Box color={colors.grey[100]}>{transaction.date}</Box>
               <Box
                 backgroundColor={colors.greenAccent[500]}
+                color="red"
                 p="5px 10px"
                 borderRadius="4px"
               >
-                ${transaction.cost}
+                Rs{transaction.cost}
               </Box>
             </Box>
           ))}
@@ -224,7 +225,7 @@ const Dashboard = () => {
           p="30px"
         >
           <Typography variant="h5" fontWeight="600">
-            Campaign
+            Total saving Achieved
           </Typography>
           <Box
             display="flex"
@@ -238,9 +239,11 @@ const Dashboard = () => {
               color={colors.greenAccent[500]}
               sx={{ mt: "15px" }}
             >
-              $48,352 revenue generated
+              34% funds saved
             </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+            <Typography
+              fontWeight="600"
+              variant="h-5">We saved funds, including costs for dismantling and rebuilding</Typography>
           </Box>
         </Box>
         <Box
@@ -253,7 +256,7 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ padding: "30px 30px 0 30px" }}
           >
-            Sales Quantity
+            Completeness Analysis
           </Typography>
           <Box height="250px" mt="-20px">
             <BarChart isDashboard={true} />
@@ -277,6 +280,7 @@ const Dashboard = () => {
           </Box>
         </Box>
       </Box>
+
     </Box>
   );
 };
